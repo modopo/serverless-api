@@ -14,7 +14,7 @@ exports.handler = async (event) => {
   let responseBody = null;
 
   if (param) {
-    responseBody = await employeeModel.query('id').eq(param[id]).exec();
+    responseBody = await employeeModel.query('id').eq(param['id']).exec();
   } else {
     responseBody = await employeeModel.scan().exec();
   }
